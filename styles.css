@@ -120,11 +120,12 @@ main{position:relative}
 
 .name-amp{
   font-family:"Cormorant Garamond", serif;
-  font-size:clamp(46px, 7vw, 78px);
-  font-weight:600;
+  font-size:clamp(36px, 6vw, 56px);
+  font-weight:500;
   color:#fff;
-  line-height:.8;
-  margin:-6px 0;
+  line-height:1;
+  margin:-4px 0;
+  opacity:.9;
 }
 
 .hero-date{
