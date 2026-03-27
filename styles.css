@@ -427,15 +427,22 @@ main{position:relative}
   border-radius:28px;
   border:1px solid rgba(0,0,0,.06);
   box-shadow:var(--shadow);
+  overflow:hidden;
 }
 
-.calendar-weekdays,.calendar-grid{
+.calendar-weekdays,
+.calendar-grid{
   display:grid;
-  grid-template-columns:repeat(7,1fr);
+  grid-template-columns:repeat(7, minmax(0, 1fr));
   gap:10px;
+  width:100%;
 }
 
 .calendar-weekdays span{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-width:0;
   font-size:13px;
   text-transform:uppercase;
   color:var(--muted);
@@ -444,8 +451,10 @@ main{position:relative}
 
 .calendar-grid div{
   aspect-ratio:1/1;
-  display:grid;
-  place-items:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-width:0;
   border-radius:18px;
   font-family:"Cormorant Garamond", serif;
   font-size:28px;
@@ -468,6 +477,32 @@ main{position:relative}
 
 .calendar-grid .selected-day::after{
   content:none;
+}
+
+@media (max-width: 560px){
+  .calendar{
+    padding:18px 14px;
+  }
+
+  .calendar-weekdays,
+  .calendar-grid{
+    gap:6px;
+  }
+
+  .calendar-weekdays span{
+    font-size:11px;
+    letter-spacing:.08em;
+  }
+
+  .calendar-grid div{
+    font-size:20px;
+  }
+
+  .calendar-grid .selected-day{
+    width:44px;
+    height:44px;
+    border-width:2px;
+  }
 }
 
 .countdown-section{
