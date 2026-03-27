@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Алмаз & Малика — Свадебное приглашение</title>
+  <meta name="description" content="Свадебное приглашение Алмаза и Малики" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="bg-texture"></div>
+
+  <div class="floating-actions">
+    <button id="langToggle" class="circle-btn lang-btn" aria-label="Сменить язык">KZ</button>
+    <button id="musicToggle" class="circle-btn music-btn" aria-label="Включить музыку">
+      <span class="music-icon">♪</span>
+    </button>
+  </div>
+
+  <audio id="weddingAudio" loop preload="auto">
+    <source src="assets/music.mp3" type="audio/mpeg" />
+  </audio>
+
+  <main>
+    <section class="hero">
+      <div class="hero-overlay"></div>
+
+      <div class="hero-inner reveal zoom-in">
+        <p class="eyebrow" data-i18n="heroEyebrow">Свадебное приглашение</p>
+        <h1 class="couple-names">Алмаз <span>&</span> Малика</h1>
+        <p class="hero-date" data-i18n="heroDate">18 июля 2026 • Астана</p>
+        <a class="primary-btn" href="#invite" data-i18n="heroButton">Открыть приглашение</a>
+      </div>
+
+      <div class="hero-scroll-indicator">
+        <span data-i18n="scrollHint">листай ниже</span>
+      </div>
+    </section>
+
+    <section id="invite" class="section card-section">
+      <div class="ornament reveal sharp-in">✦</div>
+      <div class="card invitation-card reveal fade-up">
+        <p class="script-title" data-i18n="inviteTitle">Дорогие гости!</p>
+        <p class="invite-text" data-i18n="inviteText">
+          С огромной радостью приглашаем вас разделить с нами один из самых важных и красивых дней в нашей жизни — день нашей свадьбы.
+        </p>
+      </div>
+    </section>
+
+    <section class="section gallery-section">
+      <div class="reveal fade-up">
+        <p class="section-label" data-i18n="galleryLabel">Фотогалерея</p>
+        <h2 class="section-heading" data-i18n="galleryHeading">Наши моменты</h2>
+      </div>
+
+      <div class="gallery-slider reveal zoom-in">
+        <button class="gallery-btn prev" id="galleryPrev" aria-label="Предыдущее фото">‹</button>
+
+        <div class="gallery-viewport">
+          <div class="gallery-track" id="galleryTrack">
+            <div class="gallery-slide">
+              <img src="assets/photo1.jpg" alt="Фото 1">
+            </div>
+            <div class="gallery-slide">
+              <img src="assets/photo2.jpg" alt="Фото 2">
+            </div>
+            <div class="gallery-slide">
+              <img src="assets/photo3.jpg" alt="Фото 3">
+            </div>
+          </div>
+        </div>
+
+        <button class="gallery-btn next" id="galleryNext" aria-label="Следующее фото">›</button>
+      </div>
+
+      <div class="gallery-dots" id="galleryDots"></div>
+    </section>
+
+    <section class="section details-section">
+      <div class="details-card reveal fade-up">
+        <p class="section-label" data-i18n="detailsLabel">Дата и место</p>
+        <h2 class="section-heading" data-i18n="detailsHeading">Будем счастливы видеть вас</h2>
+
+        <div class="detail-row">
+          <span class="detail-name" data-i18n="dateLabel">Дата</span>
+          <span class="detail-value" data-i18n="fullDate">18 июля 2026 года</span>
+        </div>
+
+        <div class="detail-row">
+          <span class="detail-name" data-i18n="cityLabel">Город</span>
+          <span class="detail-value" data-i18n="cityValue">Астана</span>
+        </div>
+
+        <div class="detail-row">
+          <span class="detail-name" data-i18n="venueLabel">Ресторан</span>
+          <span class="detail-value" data-i18n="venueValue">Шығыс жұлдызы</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section calendar-section">
+      <div class="reveal fade-up">
+        <p class="section-label" data-i18n="calendarLabel">Сохраните дату</p>
+        <h2 class="section-heading" data-i18n="calendarHeading">Июль 2026</h2>
+      </div>
+
+      <div class="calendar reveal sharp-in">
+        <div class="calendar-weekdays">
+          <span data-i18n="wk1">Пн</span>
+          <span data-i18n="wk2">Вт</span>
+          <span data-i18n="wk3">Ср</span>
+          <span data-i18n="wk4">Чт</span>
+          <span data-i18n="wk5">Пт</span>
+          <span data-i18n="wk6">Сб</span>
+          <span data-i18n="wk7">Вс</span>
+        </div>
+        <div class="calendar-grid" id="calendarGrid"></div>
+      </div>
+    </section>
+
+    <section class="section countdown-section">
+      <div class="reveal fade-up">
+        <p class="section-label" data-i18n="countdownLabel">До нашей свадьбы</p>
+        <h2 class="section-heading" data-i18n="countdownHeading">Осталось совсем немного</h2>
+      </div>
+
+      <div class="countdown reveal zoom-in" id="countdown">
+        <div class="count-box"><span id="days">0</span><small data-i18n="days">дней</small></div>
+        <div class="count-box"><span id="hours">0</span><small data-i18n="hours">часов</small></div>
+        <div class="count-box"><span id="minutes">0</span><small data-i18n="minutes">минут</small></div>
+        <div class="count-box"><span id="seconds">0</span><small data-i18n="seconds">секунд</small></div>
+      </div>
+    </section>
+
+<section class="section timeline-section">
+  <div class="timeline-header reveal fade-up">
+    <p class="section-label" data-i18n="programLabel">Программа дня</p>
+    <h2 class="section-heading" data-i18n="programHeading">Ждём вас на нашем празднике</h2>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item reveal slide-left">
+      <div class="timeline-time">16:30</div>
+      <div class="timeline-content">
+        <h3 data-i18n="prog1Title">Сбор гостей</h3>
+        <p data-i18n="prog1Text">Время для тёплых встреч, улыбок и первых фотографий.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item reveal slide-right">
+      <div class="timeline-time">17:00</div>
+      <div class="timeline-content">
+        <h3 data-i18n="prog2Title">Начало торжества</h3>
+        <p data-i18n="prog2Text">Главные слова, эмоции и праздничная атмосфера.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item reveal slide-left">
+      <div class="timeline-time">18:00</div>
+      <div class="timeline-content">
+        <h3 data-i18n="prog3Title">Праздничный ужин</h3>
+        <p data-i18n="prog3Text">Вкусная еда, тосты, музыка и радость рядом с близкими.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <section class="section venue-section">
+      <div class="venue-card reveal fade-up">
+        <p class="section-label" data-i18n="locationLabel">Локация</p>
+        <h2 class="section-heading" data-i18n="locationHeading">Ресторан «Шығыс жұлдызы»</h2>
+        <p class="venue-text" data-i18n="locationText">
+          Астана. Нажмите на кнопку ниже, чтобы сразу открыть маршрут в 2GIS.
+        </p>
+        <a class="primary-btn" target="_blank" rel="noopener noreferrer" href="https://go.2gis.com/e6erq" data-i18n="mapButton">
+          Открыть в 2GIS
+        </a>
+      </div>
+    </section>
+
+    <section class="section rsvp-section">
+      <div class="rsvp-classic reveal fade-up">
+        <h2 class="rsvp-big-title" data-i18n="rsvpBigTitle">РАЗДЕЛИТЕ С НАМИ НАШУ РАДОСТЬ!!!</h2>
+
+        <form id="rsvpForm" class="rsvp-classic-form">
+          <div class="classic-field">
+            <label for="guestName" data-i18n="nameLabel">Ваше имя</label>
+            <input id="guestName" name="guestName" type="text" required />
+          </div>
+
+          <div class="classic-radio-group">
+            <label class="classic-radio">
+              <input type="radio" name="attendance" value="yes" required />
+              <span data-i18n="attendYes">Конечно, приду</span>
+            </label>
+
+            <label class="classic-radio">
+              <input type="radio" name="attendance" value="plus" />
+              <span data-i18n="attendPlus">Приду с супругой/супругом</span>
+            </label>
+
+            <label class="classic-radio">
+              <input type="radio" name="attendance" value="no" />
+              <span data-i18n="attendNo">К сожалению, не смогу</span>
+            </label>
+          </div>
+
+          <button class="classic-submit-btn" type="submit" data-i18n="submitButton">Отправить</button>
+          <p id="formStatus" class="form-status"></p>
+        </form>
+      </div>
+    </section>
+
+    <footer class="footer section">
+      <div class="reveal fade-up">
+        <p class="footer-script">Almaz & Malika</p>
+        <p data-i18n="footerText">Будем счастливы разделить этот день вместе с вами</p>
+      </div>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
