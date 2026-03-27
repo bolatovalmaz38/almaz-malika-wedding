@@ -8,11 +8,12 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Parisienne&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Allura&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Parisienne&display=swap" rel="stylesheet">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="bg-texture"></div>
@@ -32,12 +33,20 @@
     <section class="hero">
       <div class="hero-overlay"></div>
 
-      <div class="hero-inner reveal zoom-in">
-        <p class="eyebrow" data-i18n="heroEyebrow">Свадебное приглашение</p>
-        <h1 class="couple-names">Алмаз <span> <span> <span>&</span> <span> <span> Малика</h1>
-        <p class="hero-date" data-i18n="heroDate">18 июля 2026 • Астана</p>
-        <a class="primary-btn" href="#invite" data-i18n="heroButton">Открыть приглашение</a>
-      </div>
+<div class="hero-inner reveal zoom-in">
+  <p class="eyebrow" data-i18n="heroEyebrow">Свадебное приглашение</p>
+
+  <div class="couple-names">
+    <span class="name-left" data-i18n="heroNameLeft">Алмаз</span>
+    <span class="name-amp">&</span>
+    <span class="name-right" data-i18n="heroNameRight">Малика</span>
+  </div>
+
+  <p class="hero-date" data-i18n="heroDate">18 июля 2026</p>
+  <p class="hero-city" data-i18n="heroCity">Астана</p>
+
+  <a class="primary-btn" href="#invite" data-i18n="heroButton">Открыть приглашение</a>
+</div>
 
       <div class="hero-scroll-indicator">
         <span data-i18n="scrollHint">листай ниже</span>
@@ -48,11 +57,21 @@
       <div class="ornament reveal sharp-in">✦</div>
       <div class="card invitation-card reveal fade-up">
         <p class="script-title" data-i18n="inviteTitle">Дорогие гости!</p>
-        <p class="invite-text" data-i18n="inviteText">
-          С огромной радостью приглашаем вас разделить с нами один из самых важных и красивых дней в нашей жизни — день нашей свадьбы.
-        </p>
+        <div class="invite-lines">
+		  <p class="invite-line" data-i18n-html="inviteLine1">С огромной радостью приглашаем <strong>Вас</strong></p>
+		  <p class="invite-line" data-i18n-html="inviteLine2">Разделить с нами</p>
+		  <p class="invite-line" data-i18n-html="inviteLine3">Один из <strong>Самых Важных</strong> и <strong>Красивых</strong> дней в нашей жизни -</p>
+		  <p class="invite-line" data-i18n-html="inviteLine4"><strong>День Нашей Свадьбы!</strong></p>
+		</div>
       </div>
     </section>
+
+	<section class="section hosts-section">
+	  <div class="hosts-card reveal fade-up">
+		<p class="section-label" data-i18n="hostsLabel">Той иелері</p>
+		<h2 class="hosts-names" data-i18n="hostsNames">Самат & Гульжан</h2>
+	  </div>
+	</section>
 
     <section class="section gallery-section">
       <div class="reveal fade-up">
@@ -110,7 +129,6 @@
 
     <section class="section calendar-section">
       <div class="reveal fade-up">
-        <p class="section-label" data-i18n="calendarLabel">Сохраните дату</p>
         <h2 class="section-heading" data-i18n="calendarHeading">Июль 2026</h2>
       </div>
 
