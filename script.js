@@ -6,18 +6,27 @@ const CONFIG = {
 const translations = {
   ru: {
     heroEyebrow: "Свадебное приглашение",
-    heroDate: "18 июля 2026 • Астана",
-    heroButton: "Открыть приглашение",
+heroNameLeft: "Алмаз",
+heroNameRight: "Малика",
+heroDate: "18 июля 2026",
+heroCity: "Астана",
+	heroButton: "Открыть приглашение",
     scrollHint: "листай ниже",
 
     inviteTitle: "Дорогие гости!",
-    inviteText: "С огромной радостью приглашаем вас разделить с нами один из самых важных и красивых дней в нашей жизни — день нашей свадьбы.",
+	inviteLine1: 'С огромной радостью приглашаем <strong>Вас</strong>',
+	inviteLine2: 'Разделить с нами',
+	inviteLine3: 'Один из <strong>Самых Важных</strong> и <strong>Красивых</strong> дней в нашей жизни -',
+	inviteLine4: '<strong>День Нашей Свадьбы!</strong>',
+	hostsLabel: "Той иелері",
+	hostsNames: "Самат & Гульжан",
+
 
     galleryLabel: "Фотогалерея",
     galleryHeading: "Наши моменты",
 
     detailsLabel: "Дата и место",
-    detailsHeading: "Будем счастливы видеть вас",
+    detailsHeading: "Будем счастливы видеть Вас",
     dateLabel: "Дата",
     fullDate: "18 июля 2026 года",
     cityLabel: "Город",
@@ -25,7 +34,6 @@ const translations = {
     venueLabel: "Ресторан",
     venueValue: "Шығыс жұлдызы",
 
-    calendarLabel: "Сохраните дату",
     calendarHeading: "Июль 2026",
     wk1: "Пн",
     wk2: "Вт",
@@ -43,7 +51,7 @@ const translations = {
     seconds: "секунд",
 
     programLabel: "Программа дня",
-    programHeading: "Ждём вас на нашем празднике",
+    programHeading: "Ждём Вас на нашем празднике",
     prog1Title: "Сбор гостей",
     prog1Text: "Время для тёплых встреч, улыбок и первых фотографий.",
     prog2Title: "Начало торжества",
@@ -53,7 +61,7 @@ const translations = {
 
     locationLabel: "Локация",
     locationHeading: "Ресторан «Шығыс жұлдызы»",
-    locationText: "Астана. Нажмите на кнопку ниже, чтобы сразу открыть маршрут в 2GIS.",
+    locationText: "г. Астана, ул. Темирбек Жургенов, 18/2. Нажмите на кнопку ниже, чтобы сразу открыть маршрут в 2GIS.",
     mapButton: "Открыть в 2GIS",
 
     rsvpBigTitle: "РАЗДЕЛИТЕ С НАМИ НАШУ РАДОСТЬ!!!",
@@ -63,38 +71,46 @@ const translations = {
     attendNo: "К сожалению, не смогу",
     submitButton: "Отправить",
 
-    footerText: "Будем счастливы разделить этот день вместе с вами",
+    footerText: "Будем счастливы разделить этот день вместе с Вами",
 
     sending: "Отправка...",
     enterName: "Введите имя",
     chooseOption: "Выберите вариант",
-    sentYes: (name) => `Спасибо, ${name}! Ждём вас 💛`,
+    sentYes: (name) => `Спасибо, ${name}! Ждём Вас 💛`,
     sentNo: (name) => `Спасибо, ${name}!`,
     failed: "Ошибка отправки 😔"
   },
 
   kz: {
     heroEyebrow: "Үйлену тойына шақыру",
-    heroDate: "2026 жыл 18 шілде • Астана",
+heroNameLeft: "Алмаз",
+heroNameRight: "Малика",
+heroDate: "18 шілде 2026 жыл",
+heroCity: "Астана",
     heroButton: "Шақыруды ашу",
     scrollHint: "төмен сырғытыңыз",
 
-    inviteTitle: "Құрметті қонақтар!",
-    inviteText: "Сіздерді өміріміздегі ең маңызды әрі әдемі күндердің бірі — үйлену тойымызбен бірге бөлісуге шын жүректен шақырамыз.",
+    inviteTitle: "Құрметті Қонақтар!",
+	inviteLine1: 'Сіздерді Біздің өміріміздегі',
+	inviteLine2: '<strong>Ең Маңызды</strong> әрі <strong>Әдемі</strong> күндерінің бірі -',
+	inviteLine3: 'Үйлену тойымызды Бірге өткізуге',
+	inviteLine4: 'шын жүректен <strong>Шақырамыз!</strong>',
+	hostsLabel: "Той иелері",
+	hostsNames: "Самат & Гульжан",
+
 
     galleryLabel: "Фотогалерея",
     galleryHeading: "Біздің сәттер",
 
-    detailsLabel: "Күні мен орны",
-    detailsHeading: "Сіздерді қуана күтеміз",
+    detailsLabel: "Өтетін күні мен орны",
+    detailsHeading: "Сіздерді қуана күтеміз!",
     dateLabel: "Күні",
-    fullDate: "2026 жыл 18 шілде",
+    fullDate: "18 шілде 2026 жыл",
     cityLabel: "Қала",
     cityValue: "Астана",
     venueLabel: "Мейрамхана",
     venueValue: "Шығыс жұлдызы",
 
-    calendarLabel: "Күнді белгілеңіз",
     calendarHeading: "Шілде 2026",
     wk1: "Дс",
     wk2: "Сс",
@@ -120,12 +136,12 @@ const translations = {
     prog3Title: "Мерекелік дастарқан",
     prog3Text: "Дәмді ас, тілектер, музыка және жақындармен қуаныш.",
 
-    locationLabel: "Өтетін жері",
+    locationLabel: "Өтетін орны",
     locationHeading: "«Шығыс жұлдызы» мейрамханасы",
-    locationText: "Астана. Төмендегі батырманы басып, 2GIS арқылы маршрутты ашыңыз.",
+    locationText: "Астана қ., Темірбек Жүргенов көшесі, 18/2. Төмендегі батырманы басып, 2GIS арқылы маршрутты ашыңыз.",
     mapButton: "2GIS-та ашу",
 
-    rsvpBigTitle: "ҚУАНЫШЫМЫЗДЫ БІЗБЕН БӨЛІСІҢІЗДЕР!!!",
+    rsvpBigTitle: "Қуанышымызға ортақ болыңыздар!!!",
     nameLabel: "Аты-жөніңіз",
     attendYes: "Әрине, келемін",
     attendPlus: "Жұбайыммен / жұбыммен келемін",
@@ -155,6 +171,13 @@ function applyLanguage(lang) {
     const key = el.dataset.i18n;
     if (dict[key]) {
       el.textContent = dict[key];
+    }
+  });
+  
+  document.querySelectorAll("[data-i18n-html]").forEach((el) => {
+    const key = el.dataset.i18nHtml;
+    if (dict[key]) {
+      el.innerHTML = dict[key];
     }
   });
 
