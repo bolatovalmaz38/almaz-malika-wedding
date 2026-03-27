@@ -62,7 +62,7 @@ main{position:relative}
   place-items:center;
   background:
     linear-gradient(rgba(18,16,14,.35), rgba(18,16,14,.55)),
-    url("assets/hero.jpg") 42% 25% / cover no-repeat;
+    url("assets/hero.JPG") 42% 25% / cover no-repeat;
 }
 
 .hero-overlay{
