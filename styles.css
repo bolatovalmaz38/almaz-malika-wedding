@@ -111,7 +111,7 @@ main{position:relative}
 .name-right{
   font-size:clamp(64px, 11vw, 118px);
   transform:none;
-  margin-top:-8px;
+  margin-top:40px;
 }
 
 .name-amp{
