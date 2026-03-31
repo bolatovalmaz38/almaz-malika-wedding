@@ -83,40 +83,50 @@ main{position:relative}
 }
 
 .couple-names{
+  position:relative;
   display:flex;
   flex-direction:column;
   align-items:center;
-  line-height:1;
+  justify-content:center;
+  gap:0;
+  line-height:.9;
+  margin:18px 0 22px;
+  min-height:220px;
 }
 
 .name-left,
 .name-right{
-  font-family:"Cormorant Garamond", serif;
+  font-family:"Allura", cursive;
   font-weight:400;
   color:#fff;
   text-shadow:0 8px 26px rgba(0,0,0,.18);
+  line-height:.9;
 }
 
-/* Верхнее имя */
 .name-left{
-  font-size:clamp(42px, 8vw, 80px);
+  font-size:clamp(64px, 11vw, 118px);
+  transform:none;
 }
 
-/* Нижнее имя */
 .name-right{
-  font-size:clamp(42px, 8vw, 80px);
+  font-size:clamp(64px, 11vw, 118px);
+  transform:none;
+  margin-top:-8px;
 }
 
-/* апостроф */
 .name-amp{
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%, -48%);
   font-family:"Cormorant Garamond", serif;
-  font-size:clamp(32px, 6vw, 52px);
+  font-size:clamp(42px, 7vw, 64px);
+  font-weight:600;
+  color:#fff;
   line-height:1;
-
-  margin:-10px 0;          /* сжимает расстояние */
-  transform:translateY(-4px); /* двигает вверх */
-
-  opacity:.9;
+  opacity:.95;
+  z-index:2;
+  pointer-events:none;
 }
 
 .hero-date{
@@ -861,19 +871,21 @@ main{position:relative}
   }
 
 .couple-names{
-  gap:0;
+  min-height:180px;
 }
 
 .name-left{
-  transform:translateX(0px);
+  font-size:clamp(58px, 12vw, 92px);
 }
 
 .name-right{
-  transform:translateX(0px);
+  font-size:clamp(58px, 12vw, 92px);
+  margin-top:-6px;
 }
 
 .name-amp{
-  margin:-10px 0;
+  font-size:clamp(36px, 8vw, 52px);
+  transform:translate(-50%, -46%);
 }
 
 .hero-inner{
