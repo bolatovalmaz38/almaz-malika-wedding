@@ -879,8 +879,7 @@ main{position:relative}
 }
 
 .name-amp{
-  margin:-10px 0;
-  transform:translateY(-10px);
+  transform:translate(-50%, -40%);
 }
 
 .hero-inner{
