@@ -6,7 +6,7 @@ const CONFIG = {
 const translations = {
   ru: {
     heroEyebrow: "Свадебное приглашение",
-heroNameLeft: "Алмаз",
+heroNameLeft: "Алмаз<br>",
 heroNameRight: "Малика",
 heroDate: "18 июля 2026",
 heroCity: "Астана",
