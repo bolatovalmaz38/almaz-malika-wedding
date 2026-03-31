@@ -18,9 +18,7 @@ body{
   margin:0;
   color:var(--text);
   background:
-    radial-gradient(circle at 20% 10%, rgba(255,255,255,.95), transparent 32%),
-    radial-gradient(circle at 80% 20%, rgba(255,255,255,.65), transparent 28%),
-    linear-gradient(180deg, #f9f7f2 0%, #f4f0e8 48%, #f8f5ef 100%);
+    linear-gradient(180deg, #f4f2ef 0%, #ebe8e3 100%);
   font-family:"Cormorant Garamond", serif;
   overflow-x:hidden;
 }
@@ -38,14 +36,7 @@ body::before{
 }
 
 .bg-texture{
-  position:fixed;
-  inset:0;
-  background:
-    radial-gradient(circle at 30% 20%, rgba(255,255,255,.35), transparent 24%),
-    radial-gradient(circle at 70% 60%, rgba(255,255,255,.18), transparent 24%);
-  opacity:.9;
-  z-index:-1;
-  pointer-events:none;
+  opacity:0.05;
 }
 
 main{position:relative}
@@ -110,12 +101,12 @@ main{position:relative}
 
 .name-left{
   font-size:clamp(60px, 10vw, 118px);
-  transform:translateX(-34px);
+  transform:translateX(0px);
 }
 
 .name-right{
   font-size:clamp(60px, 10vw, 118px);
-  transform:translateX(34px);
+  transform:translateX(0px);
 }
 
 .name-amp{
@@ -124,7 +115,7 @@ main{position:relative}
   font-weight:500;
   color:#fff;
   line-height:1;
-  margin:-4px 0;
+  margin: 0 0;
   opacity:.9;
 }
 
@@ -191,33 +182,63 @@ main{position:relative}
 
 .floating-actions{
   position:fixed;
-  right:14px;
-  top:14px;
-  z-index:20;
+  right:18px;
+  top:22px;
+  z-index:30;
   display:flex;
   flex-direction:column;
-  gap:12px;
+  gap:16px;
+  align-items:center;
 }
 
 .circle-btn{
-  width:52px;
-  height:52px;
+  width:64px;
+  height:64px;
   border-radius:50%;
-  border:1px solid rgba(255,255,255,.35);
-  backdrop-filter:blur(12px);
-  background:rgba(17,15,13,.55);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:18px;
+  font-weight:600;
+
+  background:linear-gradient(135deg, #2f2f2f, #1a1a1a);
   color:#fff;
-  cursor:pointer;
-  box-shadow:var(--shadow);
+
+  box-shadow:
+    0 10px 25px rgba(0,0,0,.25),
+    inset 0 1px 0 rgba(255,255,255,.15);
+
+  border:1px solid rgba(255,255,255,.1);
+
+  transition:.25s ease;
+  backdrop-filter:blur(6px);
+}
+
+.circle-btn:hover{
+  transform:translateY(-3px) scale(1.05);
+  box-shadow:
+    0 14px 35px rgba(0,0,0,.35),
+    inset 0 1px 0 rgba(255,255,255,.2);
 }
 
 .lang-btn{
-  font-weight:700;
-  letter-spacing:.08em;
+  background:linear-gradient(135deg, #444, #222);
+  font-size:16px;
+  letter-spacing:.05em;
 }
 
 .music-icon{
-  font-size:20px;
+  font-size:22px;
+  transform:translateY(-1px);
+}
+
+.music-btn{
+  background:linear-gradient(135deg, #c0392b, #e74c3c);
+}
+
+.music-btn{
+  background:linear-gradient(135deg, #c0392b, #e74c3c);
 }
 
 .card-section{
@@ -465,14 +486,29 @@ main{position:relative}
 }
 
 .calendar-grid .selected-day{
+  position:relative;
   background:transparent;
   color:#161310;
-  border:2px solid rgba(22,19,16,.7);
   box-shadow:none;
-  border-radius:50%;
+  border:none;
   width:56px;
   height:56px;
   margin:auto;
+  z-index:1;
+}
+
+.calendar-grid .selected-day::before{
+  content:"";
+  position:absolute;
+  inset:-8px;
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:contain;
+  z-index:-1;
+  background-image:url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'>\
+<path d='M50 86 C20 64 8 48 8 29 C8 16 18 8 29 8 C39 8 46 14 50 22 C54 14 61 8 71 8 C82 8 92 16 92 29 C92 48 80 64 50 86 Z' fill='none' stroke='%23d84a4a' stroke-width='5' stroke-linejoin='round'/>\
+</svg>");
 }
 
 .calendar-grid .selected-day::after{
@@ -498,11 +534,14 @@ main{position:relative}
     font-size:20px;
   }
 
-  .calendar-grid .selected-day{
-    width:44px;
-    height:44px;
-    border-width:2px;
-  }
+.calendar-grid .selected-day{
+  width:44px;
+  height:44px;
+}
+
+.calendar-grid .selected-day::before{
+  inset:-6px;
+}
 }
 
 .countdown-section{
@@ -775,15 +814,15 @@ main{position:relative}
     padding:54px 0;
   }
 
-  .floating-actions{
-    right:10px;
-    top:10px;
-  }
+.floating-actions{
+  top:30%;
+}
 
-  .circle-btn{
-    width:48px;
-    height:48px;
-  }
+.circle-btn{
+  width:52px;
+  height:52px;
+  font-size:14px;
+}
 
   .calendar,.venue-card,.invitation-card,.details-card{
     padding:24px 18px;
@@ -826,11 +865,11 @@ main{position:relative}
 }
 
 .name-left{
-  transform:translateX(-18px);
+  transform:translateX(0px);
 }
 
 .name-right{
-  transform:translateX(18px);
+  transform:translateX(0px);
 }
 
 .name-amp{
@@ -839,6 +878,39 @@ main{position:relative}
 
 .hero-inner{
   transform:translateY(42px);
+}
+
+.floating-actions{
+  right:12px;
+  top:18px;
+  gap:12px;
+}
+
+.lang-pill{
+  min-width:82px;
+  height:52px;
+  padding:0 14px;
+}
+
+.lang-option{
+  font-size:13px;
+}
+
+.music-orb{
+  width:78px;
+  height:78px;
+}
+
+.music-core{
+  inset:12px;
+}
+
+.music-icon{
+  font-size:24px;
+}
+
+.ring-text{
+  font-size:6px;
 }
 }
 
@@ -867,8 +939,172 @@ main{position:relative}
 .details-card .section-label{
   display:block;
   margin-bottom:8px;
+  text-align:center;
 }
 
 .details-card .section-heading{
   margin-bottom:32px;
+  text-align:center;
+}
+
+.venue-lines{
+  display:grid;
+  gap:10px;
+  margin-top:10px;
+}
+
+.venue-line{
+  margin:0;
+  font-family:"Cormorant Garamond", serif;
+  font-size:clamp(27px, 4.1vw, 42px);
+  line-height:1.42;
+}
+
+
+/* =========================
+   LANGUAGE PILL
+========================= */
+.lang-pill{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  min-width:92px;
+  height:58px;
+  padding:0 16px;
+  border:none;
+  border-radius:999px;
+  cursor:pointer;
+
+  color:#fff;
+
+  background:linear-gradient(135deg, #ff6a5e, #c43d34);
+
+  box-shadow:
+    0 14px 30px rgba(196,61,52,.35),
+    0 0 18px rgba(255,106,94,.35),
+    inset 0 1px 0 rgba(255,255,255,.2);
+
+  backdrop-filter:blur(10px);
+  transition:.25s ease;
+}
+
+.lang-pill:hover{
+  transform:translateY(-2px) scale(1.03);
+  box-shadow:
+    0 18px 36px rgba(196,61,52,.45),
+    inset 0 1px 0 rgba(255,255,255,.25);
+}
+
+.lang-option{
+  font-family:"Inter", sans-serif;
+  font-size:14px;
+  font-weight:700;
+  letter-spacing:.08em;
+  opacity:.55;
+  transition:opacity .25s ease, transform .25s ease, color .25s ease;
+}
+
+.lang-option.active{
+  opacity:1;
+  color:#fff;
+  transform:scale(1.08);
+  text-shadow:0 0 6px rgba(255,255,255,.6);
+}
+
+.lang-divider{
+  width:1px;
+  height:18px;
+  background:rgba(255,255,255,.22);
+  border-radius:999px;
+}
+
+/* =========================
+   MUSIC ORB
+========================= */
+.music-orb{
+  position:relative;
+  width:92px;
+  height:92px;
+  padding:0;
+  border:none;
+  background:none;
+  cursor:pointer;
+  transition:transform .25s ease;
+}
+
+.music-orb:hover{
+  transform:translateY(-2px) scale(1.02);
+}
+
+.music-ring-text{
+  position:absolute;
+  inset:0;
+  display:block;
+  animation:spinRing 14s linear infinite;
+}
+
+.ring-svg{
+  width:100%;
+  height:100%;
+  overflow:visible;
+}
+
+.ring-text{
+  font-family:"Inter", sans-serif;
+  font-size:7px;
+  font-weight:700;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  fill:rgba(255,255,255,.9);
+}
+
+.music-core{
+  position:absolute;
+  inset:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:linear-gradient(135deg, #ff6a5e, #c43d34);
+  box-shadow:
+    0 14px 30px rgba(0,0,0,.26),
+    0 0 0 1px rgba(255,255,255,.1) inset,
+    inset 0 1px 0 rgba(255,255,255,.18);
+  backdrop-filter:blur(10px);
+}
+
+.music-icon{
+  font-size:28px;
+  line-height:1;
+  color:#fff;
+  display:inline-block;
+  transform-origin:center;
+}
+
+.music-orb.active .music-icon{
+  animation:musicNoteSpin 2.2s linear infinite;
+}
+
+.music-orb.active .music-ring-text{
+  animation-duration:8s;
+}
+
+.music-orb.active .music-core{
+  box-shadow:
+    0 14px 34px rgba(196,61,52,.3),
+    0 0 22px rgba(255,106,94,.45),
+    0 0 0 1px rgba(255,255,255,.1) inset,
+    inset 0 1px 0 rgba(255,255,255,.18);
+}
+
+@keyframes spinRing{
+  from{ transform:rotate(0deg); }
+  to{ transform:rotate(360deg); }
+}
+
+@keyframes musicNoteSpin{
+  0%{ transform:rotate(0deg) scale(1); }
+  50%{ transform:rotate(180deg) scale(1.08); }
+  100%{ transform:rotate(360deg) scale(1); }
 }
