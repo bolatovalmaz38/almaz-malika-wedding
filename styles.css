@@ -876,6 +876,7 @@ main{position:relative}
 
 .name-right{
   transform:translateX(0px);
+  margin-top:-8px;
 }
 
 .name-amp{
