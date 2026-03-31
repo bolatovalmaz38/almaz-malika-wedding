@@ -880,6 +880,7 @@ main{position:relative}
 
 .name-amp{
   margin:-10px 0;
+  transform:translateY(-10px);
 }
 
 .hero-inner{
