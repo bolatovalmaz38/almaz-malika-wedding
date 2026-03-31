@@ -867,21 +867,19 @@ main{position:relative}
   }
 
 .couple-names{
-  min-height:180px;
+  gap:0;
 }
 
 .name-left{
-  font-size:clamp(58px, 12vw, 92px);
+  transform:translateX(0px);
 }
 
 .name-right{
-  font-size:clamp(58px, 12vw, 92px);
-  margin-top: 40px;
+  transform:translateX(0px);
 }
 
 .name-amp{
-  font-size:clamp(36px, 8vw, 52px);
-  transform:translate(-50%, -30%);
+  margin:-10px 0;
 }
 
 .hero-inner{
