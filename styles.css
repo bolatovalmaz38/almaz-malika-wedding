@@ -876,12 +876,12 @@ main{position:relative}
 
 .name-right{
   font-size:clamp(58px, 12vw, 92px);
-  margin-top:-6px;
+  margin-top: 40px;
 }
 
 .name-amp{
   font-size:clamp(36px, 8vw, 52px);
-  transform:translate(-50%, -46%);
+  transform:translate(-50%, -30%);
 }
 
 .hero-inner{
