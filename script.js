@@ -16,8 +16,9 @@ heroCity: "Астана",
     inviteTitle: "Дорогие гости!",
 	inviteLine1: 'С огромной радостью приглашаем <strong>Вас</strong>',
 	inviteLine2: 'Разделить с нами',
-	inviteLine3: 'Один из <strong>Самых Важных</strong> и <strong>Красивых</strong> дней в нашей жизни -',
-	inviteLine4: '<strong>День Нашей Свадьбы!</strong>',
+	inviteLine3: 'Один из <strong>Самых Важных</strong> и <strong>Красивых</strong> дней',
+	inviteLine4: 'в нашей жизни -',
+	inviteLine5: '<strong>День Нашей Свадьбы!</strong>',
 	hostsLabel: "Той иелері",
 	hostsNames: "Самат & Гульжан",
 
@@ -25,7 +26,7 @@ heroCity: "Астана",
     galleryLabel: "Фотогалерея",
     galleryHeading: "Наши моменты",
 
-    detailsLabel: "Дата и место",
+    detailsLabel: "Дата и место проведения",
     detailsHeading: "Будем счастливы видеть Вас",
     dateLabel: "Дата",
     fullDate: "18 июля 2026 года",
@@ -51,7 +52,7 @@ heroCity: "Астана",
     seconds: "секунд",
 
     programLabel: "Программа дня",
-    programHeading: "Ждём Вас на нашем празднике",
+    programHeading: "Ждём Вас<br>на нашем празднике",
     prog1Title: "Сбор гостей",
     prog1Text: "Время для тёплых встреч, улыбок и первых фотографий.",
     prog2Title: "Начало торжества",
@@ -60,9 +61,14 @@ heroCity: "Астана",
     prog3Text: "Вкусная еда, тосты, музыка и радость рядом с близкими.",
 
     locationLabel: "Локация",
-    locationHeading: "Ресторан «Шығыс жұлдызы»",
+    locationHeading: "Ресторан<br>«Шығыс жұлдызы»",
     locationText: "г. Астана, ул. Темирбек Жургенов, 18/2. Нажмите на кнопку ниже, чтобы сразу открыть маршрут в 2GIS.",
     mapButton: "Открыть в 2GIS",
+	
+	venueLine1: "г. Астана,",
+	venueLine2: "ул. Темирбек Жургенов, 18/2.",
+	venueLine3: "Нажмите на кнопку ниже,",
+	venueLine4: "чтобы сразу открыть маршрут в 2GIS.",
 
     rsvpBigTitle: "РАЗДЕЛИТЕ С НАМИ НАШУ РАДОСТЬ!!!",
     nameLabel: "Ваше имя",
@@ -93,8 +99,9 @@ heroCity: "Астана",
     inviteTitle: "Құрметті Қонақтар!",
 	inviteLine1: 'Сіздерді Біздің өміріміздегі',
 	inviteLine2: '<strong>Ең Маңызды</strong> әрі <strong>Әдемі</strong> күндерінің бірі -',
-	inviteLine3: 'Үйлену тойымызды Бірге өткізуге',
-	inviteLine4: 'шын жүректен <strong>Шақырамыз!</strong>',
+	inviteLine3: 'Үйлену тойымызды',
+	inviteLine4: 'Бірге өткізуге',
+	inviteLine5: 'шын жүректен <strong>Шақырамыз!</strong>',
 	hostsLabel: "Той иелері",
 	hostsNames: "Самат & Гульжан",
 
@@ -137,9 +144,14 @@ heroCity: "Астана",
     prog3Text: "Дәмді ас, тілектер, музыка және жақындармен қуаныш.",
 
     locationLabel: "Өтетін орны",
-    locationHeading: "«Шығыс жұлдызы» мейрамханасы",
+    locationHeading: "«Шығыс жұлдызы»<br>мейрамханасы",
     locationText: "Астана қ., Темірбек Жүргенов көшесі, 18/2. Төмендегі батырманы басып, 2GIS арқылы маршрутты ашыңыз.",
     mapButton: "2GIS-та ашу",
+
+	venueLine1: "Астана қ.,",
+	venueLine2: "Темірбек Жүргенов көшесі, 18/2.",
+	venueLine3: "Төмендегі батырманы басып,",
+	venueLine4: "2GIS арқылы маршрутты ашыңыз.",
 
     rsvpBigTitle: "Қуанышымызға ортақ болыңыздар!!!",
     nameLabel: "Аты-жөніңіз",
@@ -170,7 +182,7 @@ function applyLanguage(lang) {
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     const key = el.dataset.i18n;
     if (dict[key]) {
-      el.textContent = dict[key];
+      el.innerHTML = dict[key];
     }
   });
   
@@ -181,8 +193,17 @@ function applyLanguage(lang) {
     }
   });
 
-  const langToggle = document.getElementById("langToggle");
-  langToggle.textContent = lang === "ru" ? "KZ" : "RU";
+const langToggle = document.getElementById("langToggle");
+const ru = langToggle.querySelector(".lang-ru");
+const kz = langToggle.querySelector(".lang-kz");
+
+if (lang === "ru") {
+  ru.classList.add("active");
+  kz.classList.remove("active");
+} else {
+  kz.classList.add("active");
+  ru.classList.remove("active");
+}
 
   localStorage.setItem("weddingLang", lang);
   buildCalendar();
@@ -322,6 +343,12 @@ function initForm() {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
+    if (form.dataset.sending === "true") return;
+    form.dataset.sending = "true";
+
+    const submitBtn = form.querySelector('button[type="submit"]');
+    if (submitBtn) submitBtn.disabled = true;
+
     const dict = translations[currentLang];
     statusEl.textContent = dict.sending;
 
@@ -330,11 +357,15 @@ function initForm() {
 
     if (!name) {
       statusEl.textContent = dict.enterName;
+      form.dataset.sending = "false";
+      if (submitBtn) submitBtn.disabled = false;
       return;
     }
 
     if (!checkedAttendance) {
       statusEl.textContent = dict.chooseOption;
+      form.dataset.sending = "false";
+      if (submitBtn) submitBtn.disabled = false;
       return;
     }
 
@@ -370,6 +401,9 @@ function initForm() {
     } catch (err) {
       console.error(err);
       statusEl.textContent = dict.failed;
+    } finally {
+      form.dataset.sending = "false";
+      if (submitBtn) submitBtn.disabled = false;
     }
   });
 }
