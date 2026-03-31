@@ -18,12 +18,31 @@
 <body>
   <div class="bg-texture"></div>
 
-  <div class="floating-actions">
-    <button id="langToggle" class="circle-btn lang-btn" aria-label="Сменить язык">KZ</button>
-    <button id="musicToggle" class="circle-btn music-btn" aria-label="Включить музыку">
+<div class="floating-actions">
+  <button id="langToggle" class="lang-pill" aria-label="Сменить язык">
+    <span class="lang-option lang-ru active">RU</span>
+    <span class="lang-divider"></span>
+    <span class="lang-option lang-kz">KZ</span>
+  </button>
+
+  <button id="musicToggle" class="music-orb" aria-label="Включить музыку">
+    <span class="music-ring-text">
+      <svg viewBox="0 0 120 120" class="ring-svg" aria-hidden="true">
+        <defs>
+          <path id="musicTextPath" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0" />
+        </defs>
+        <text class="ring-text">
+          <textPath href="#musicTextPath" startOffset="0%">
+            Нажми чтобы включить музыку • Музыканы қосу үшін басыңыз •
+          </textPath>
+        </text>
+      </svg>
+    </span>
+    <span class="music-core">
       <span class="music-icon">♪</span>
-    </button>
-  </div>
+    </span>
+  </button>
+</div>
 
   <audio id="weddingAudio" loop preload="auto">
     <source src="assets/music.mp3" type="audio/mpeg" />
@@ -60,8 +79,9 @@
         <div class="invite-lines">
 		  <p class="invite-line" data-i18n-html="inviteLine1">С огромной радостью приглашаем <strong>Вас</strong></p>
 		  <p class="invite-line" data-i18n-html="inviteLine2">Разделить с нами</p>
-		  <p class="invite-line" data-i18n-html="inviteLine3">Один из <strong>Самых Важных</strong> и <strong>Красивых</strong> дней в нашей жизни -</p>
-		  <p class="invite-line" data-i18n-html="inviteLine4"><strong>День Нашей Свадьбы!</strong></p>
+		  <p class="invite-line" data-i18n-html="inviteLine3">Один из <strong>Самых Важных</strong> и <strong>Красивых</strong> дней</p>
+		  <p class="invite-line" data-i18n-html="inviteLine4">в нашей жизни -</p>
+		  <p class="invite-line" data-i18n-html="inviteLine5"><strong>День Нашей Свадьбы!</strong></p>
 		</div>
       </div>
     </section>
@@ -197,9 +217,12 @@
       <div class="venue-card reveal fade-up">
         <p class="section-label" data-i18n="locationLabel">Локация</p>
         <h2 class="section-heading" data-i18n="locationHeading">Ресторан «Шығыс жұлдызы»</h2>
-        <p class="venue-text" data-i18n="locationText">
-          Астана. Нажмите на кнопку ниже, чтобы сразу открыть маршрут в 2GIS.
-        </p>
+        <div class="venue-lines">
+		  <p class="venue-line" data-i18n-html="venueLine1">г. Астана,</p>
+		  <p class="venue-line" data-i18n-html="venueLine2">ул. Темирбек Жургенов, 18/2.</p>
+		  <p class="venue-line" data-i18n-html="venueLine3">Нажмите на кнопку ниже,</p>
+		  <p class="venue-line" data-i18n-html="venueLine4">чтобы сразу открыть маршрут в 2GIS.</p>
+		</div>
         <a class="primary-btn" target="_blank" rel="noopener noreferrer" href="https://go.2gis.com/e6erq" data-i18n="mapButton">
           Открыть в 2GIS
         </a>
