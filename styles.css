@@ -95,7 +95,7 @@ main{position:relative}
 .name-amp{
   display:inline-block;
   font-size:clamp(32px, 6vw, 48px);
-  transform:translateY(30%);
+  transform:translateY(90%);
 }
 
 .hero-date{
