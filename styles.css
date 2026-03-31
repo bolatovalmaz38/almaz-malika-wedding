@@ -95,7 +95,7 @@ main{position:relative}
 .name-amp{
   display:inline-block;
   font-size:clamp(32px, 6vw, 48px);
-  margin: 0 0; /* регулируешь расстояние */
+  transform:translateY(30%);
 }
 
 .hero-date{
@@ -850,7 +850,6 @@ main{position:relative}
 
   .name-amp{
     font-size:clamp(28px, 7vw, 40px);
-    margin: 0 0;
   }
 
 .hero-inner{
